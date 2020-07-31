@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: private-reg
+spec:
+  replicas: 2
+  containers:
+  - name: private-reg-container
+    image: localhost:5000/php-app:latest
+    envFrom:
+    - configMapRef:
+        name: php-app-config
+  imagePullSecrets:
+  - name: regcred
