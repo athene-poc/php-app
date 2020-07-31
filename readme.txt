@@ -15,7 +15,7 @@ create configmaps
 kubectl create configmap php-app-config --from-literal=greeter=kubernetes
 
 create pod from yaml file
-kubectl apply -f my-private-reg-pod.yaml
+kubectl apply -f php-app.yaml
 
 build the app from docker
 docker build php-app
